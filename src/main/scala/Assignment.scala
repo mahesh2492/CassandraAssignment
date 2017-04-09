@@ -11,7 +11,7 @@ class Assignment {
 
   def selectByEmail(email:String) = {
     // session.execute("insert into video(video_name,userid,video_id,year) values('Bahubhali ',1,109,2015);")
-    val records = session.execute(s"select * from user where email='$email'")
+    val records = session.execute(s"select * from user where email='$email' ")
     val iterate = records.iterator()
 
     while (iterate.hasNext) {
@@ -24,7 +24,7 @@ class Assignment {
 
   def selectByVideoName(videoname:String) = {
 
-    val records = session.execute(s"select * from user from video = $videoname")
+    val records = session.execute(s"select * from user from video = '$videoname' ")
     val iterate = records.iterator()
 
     while (iterate.hasNext) {
